@@ -1,0 +1,10 @@
+{
+    "name": "express-tutorial",
+    "version": "1.0.0",
+    "dependencies": {
+        "express": "*",
+        "ejs": "*",
+        "body-parser": "*",
+        "express-session": "*"
+    }
+}
