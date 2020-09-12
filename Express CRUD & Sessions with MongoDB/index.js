@@ -1,4 +1,3 @@
-// import dependencies you will use
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -56,7 +55,6 @@ myApp.set('view engine', 'ejs');
 
 // set up different routes (pages) of the website
 
-
 // ------ validation functions --------
 // positive number
 let positiveNum = /^[1-9][0-9]*$/;
@@ -80,11 +78,11 @@ function customPhoneValidation(value){
     }
     return true;
 }
+
 /* custom validation for tickets and lunch
     1. tickets should be a number
     2. users has to buy lunch if they buy less than 3 tickets
 */
-// *** HELPFUL FOR INCLASS 7&8&9
 function customLunchTicketsValidations(value, {req}){ // destructure req
     let tickets = req.body.tickets;
     if(checkRegex(value, positiveNum)){
@@ -98,7 +96,6 @@ function customLunchTicketsValidations(value, {req}){ // destructure req
     }
     return true;
 }
-
 
 // home page
 myApp.get('/', function(req, res){
@@ -185,9 +182,6 @@ myApp.post('/login', function(req, res) {
     let user = req.body.username;
     let pass = req.body.password;
 
-    //console.log(username);
-    //console.log(password);
-
     Admin.findOne({username: user, password: pass}).exec(function(err, admin) {
         // log any errors
         console.log(`Error: ${err}`);
@@ -248,5 +242,3 @@ myApp.listen(8080);
 
 //tell everything was ok
 console.log('Everything executed fine.. website at port 8080....');
-
-

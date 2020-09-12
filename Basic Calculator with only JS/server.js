@@ -15,10 +15,3 @@ app.use('/', basicRouter);
 app.listen(3000, function() {
     console.log('Example app listening on port 3000!')
 });
-
-
-// <script type="text/javascript" src="src.js"></script>
-// <%- include('basicCal-script') -%>
-
-// when should I use below?
-//app.engine('html', require('ejs').renderFile);
