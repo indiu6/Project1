@@ -1,0 +1,40 @@
+{
+  "name": "web2-nodejs",
+  "version": "1.0.0",
+  "main": "main.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node main",
+    "dev": "nodemon main"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/web-n/Nodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/web-n/Nodejs/issues"
+  },
+  "homepage": "https://github.com/web-n/Nodejs#readme",
+  "dependencies": {
+    "body-parser": "*",
+    "compression": "*",
+    "connect-flash": "*",
+    "connect-mongo": "^3.2.0",
+    "ejs": "*",
+    "express": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "helmet": "*",
+    "mongoose": "*",
+    "nodemailer": "^6.4.11",
+    "sanitize-html": "*",
+    "session-file-store": "*"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "description": ""
+}
