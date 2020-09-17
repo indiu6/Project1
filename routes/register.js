@@ -17,7 +17,7 @@ const nodemailer = require('nodemailer');
 
 
 const mongoose = require('mongoose');
-let mongoDBcloud ='cluster0.y5ghq.azure.mongodb.net:27017/loginProject'
+let mongoDBcloud ='mongodb://Admin:CoONEOAbzkhWr9LH@cluster0.y5ghq.azure.mongodb.net/loginProject?retryWrites=true&w=majority'
 mongoose.connect(mongoDBcloud, {
     useNewUrlParser: true,
     useUnifiedTopology: true

@@ -6,9 +6,10 @@ let app = express.Router();
 app.use(bodyParser.urlencoded({extended:false}));
 
 // set up the DB connection
-
+// mongodb+srv://Admin:<password>@cluster0.y5ghq.azure.mongodb.net/<dbname>?retryWrites=true&w=majority
 const mongoose = require('mongoose');
-let mongoDBcloud ='mongodb+srv://Admin:@cluster0.y5ghq.azure.mongodb.net/loginProject?retryWrites=true&w=majority'
+let mongoDBcloud ='mongodb://Admin:CoONEOAbzkhWr9LH@cluster0.y5ghq.azure.mongodb.net/loginProject?retryWrites=true&w=majority'
+
 mongoose.connect(mongoDBcloud, {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -32,6 +33,7 @@ app.get('/', function(req, res) {
   res.render('login');
 });
 
+// 로그아웃 기능
 app.get('/logout', function(req, res) {
   req.session.destroy(function(err) {
     res.redirect('/');
