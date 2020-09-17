@@ -8,7 +8,8 @@ app.use(bodyParser.urlencoded({extended:false}));
 // set up the DB connection
 // mongodb+srv://Admin:<password>@cluster0.y5ghq.azure.mongodb.net/<dbname>?retryWrites=true&w=majority
 const mongoose = require('mongoose');
-let mongoDBcloud ='mongodb://Admin:CoONEOAbzkhWr9LH@cluster0.y5ghq.azure.mongodb.net/loginProject?retryWrites=true&w=majority'
+let mongoDBcloud ='mongodb+srv://Admin:CoONEOAbzkhWr9LH@cluster0.y5ghq.azure.mongodb.net/test'
+// mongodb://Admin:CoONEOAbzkhWr9LH@cluster0.y5ghq.azure.mongodb.net/loginProject?retryWrites=true&w=majority
 
 mongoose.connect(mongoDBcloud, {
     useNewUrlParser: true,
