@@ -1,3 +1,2 @@
-routes/login.js
-routes/register.js
 sessions/
+.env
