@@ -6,7 +6,6 @@ let app = express.Router();
 app.use(bodyParser.urlencoded({extended:false}));
 
 // set up the DB connection
-
 const mongoose = require('mongoose');
 let mongoDBcloud = process.env.DB_URL;
 mongoose.connect(mongoDBcloud, {
@@ -40,10 +39,10 @@ app.get('/logout', function(req, res) {
 });
 
 app.post('/', function(req, res) {
-  var email = req.body.email;
-  var password = req.body.password;
+  let email = req.body.email;
+  let password = req.body.password;
 
-  var LoggedUser = mongoose.model('users', {
+  let LoggedUser = mongoose.model('users', {
     firstName : String,
     lastName : String,
     email : String,

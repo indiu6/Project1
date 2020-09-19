@@ -1,7 +1,7 @@
 let express = require('express');
 let router = express.Router();
 require('dotenv').config();
-const app = express() ;
+const app = express();
 const path = require('path');
 
 let bodyParser = require('body-parser');
@@ -15,12 +15,11 @@ app.use(express.static(__dirname+'/public'));
 const { body } = require('express-validator/check');
 const nodemailer = require('nodemailer');
 
-
 const mongoose = require('mongoose');
 let mongoDBcloud = process.env.DB_URL;
 mongoose.connect(mongoDBcloud, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 });
 
 // set up the model for the user info 
@@ -35,8 +34,8 @@ const User = mongoose.model('User', {
 const {check, validationResult} = require('express-validator'); // ES6 standard for destructuring an object
 const { selectFields } = require('express-validator/src/select-fields');
 
-var emailRegex = /([a-zA-Z0-9]{1,}@[a-zA-Z0-9]{1,}.[a-z]{2,}\.?[a-z]{2,}?)/;
-var passwordRegex = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+let emailRegex = /([a-zA-Z0-9]{1,}@[a-zA-Z0-9]{1,}.[a-z]{2,}\.?[a-z]{2,}?)/;
+let passwordRegex = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
 //function to check a value using regular expression
 function checkRegex(userInput, regex){
   if(regex.test(userInput)){
@@ -56,7 +55,6 @@ function customPasswordValidation(value){
 }
 
 router.get('/',function(req, res) {   
-
   res.render('register')
 });
 
@@ -67,9 +65,9 @@ router.post('/', [
   check('inputPassword').custom(customPasswordValidation),
   body('inputPassword').custom((value, { req }) => {
     if (value !== req.body.repeatPassword) {
-        throw new Error('Password confirmation does not match password');
-        }
-        return true;
+      throw new Error('Password confirmation does not match password');
+    }
+    return true;
   })], function(req, res){
 
     // 이메일 인증 using nodemailer
@@ -95,8 +93,7 @@ router.post('/', [
       else {
         console.log('Email sent: ' + info.response);
       }
-    });
-    
+    });    
 
     const errors = validationResult(req);
     console.log(errors);
@@ -106,21 +103,21 @@ router.post('/', [
           errors:errors.array()
       });
     } else {
-      var firstName = req.body.firstName; 
-      var lastName = req.body.lastName;
-      //var email = req.body.email;
-      var inputPassword = req.body.inputPassword;
-      var repeatPassword = req.body.repeatPassword;
+      let firstName = req.body.firstName; 
+      let lastName = req.body.lastName;
+      //let email = req.body.email;
+      let inputPassword = req.body.inputPassword;
+      //let repeatPassword = req.body.repeatPassword;
 
       // create an object to store in the DB
-      var userObject = {
+      let userObject = {
         firstName : firstName,
         lastName : lastName,
         email : email,
         password : inputPassword 
       }
       // Store DB
-      var newUser = new User(userObject);
+      let newUser = new User(userObject);
 
       //Save the user 
       newUser.save().then(function(){
