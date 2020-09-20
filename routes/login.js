@@ -9,8 +9,8 @@ app.use(bodyParser.urlencoded({extended:false}));
 const mongoose = require('mongoose');
 let mongoDBcloud = process.env.DB_URL;
 mongoose.connect(mongoDBcloud, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 });
 
 // get expression session
