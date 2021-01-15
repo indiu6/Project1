@@ -31,7 +31,8 @@
     "express-validator": "*",
     "helmet": "*",
     "mongoose": "*",
-    "nodemailer": "^6.4.11",
+    "mquery": "^3.2.3",
+    "nodemailer": "^6.4.17",
     "sanitize-html": "*",
     "session-file-store": "*"
   },
