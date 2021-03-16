@@ -14,7 +14,7 @@ app.set('views', path.join(__dirname, 'views'));
 //use public folder for CSS etc.
 app.use(express.static(__dirname + '/public'));
 
-const { body } = require('express-validator/check');
+const { body } = require('express-validator');
 const nodemailer = require('nodemailer');
 
 const mongoose = require('mongoose');

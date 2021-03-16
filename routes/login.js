@@ -33,7 +33,7 @@ app.get('/', function (req, res) {
   res.render('login');
 });
 
-// 로그아웃
+// Logout
 app.get('/logout', function (req, res) {
   req.session.destroy(function (err) {
     res.redirect('/');
